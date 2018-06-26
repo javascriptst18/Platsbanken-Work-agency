@@ -22,14 +22,19 @@ function match(matches) {
 	let annonsData = matches.matchningslista.matchningdata;
 	let html = "";
 	for (let annons of annonsData) {
+		
+
 		html += `
-			<div class="annons">
-				<p>${annons.annonsrubrik}</p>
-				<p>${annons.yrkesbenamning}</p>
-				<p>${annons.arbetsplatsnamn}</p>
-				<p>${annons.kommunnamn}</p>
-				<p>${annons.sista_ansokningsdag.substring(0, 10)}</p>
-				<p>${annons.anstallningstyp}</p>
+			
+			<div id="${annons.annonsid}" class="annons">
+				<a href="${annons.annonsurl}" target="_blank">	
+					<p>${annons.annonsrubrik}</p>
+					<p>${annons.yrkesbenamning}</p>
+					<p>${annons.arbetsplatsnamn}</p>
+					<p>${annons.kommunnamn}</p>
+					<p>${annons.sista_ansokningsdag.substring(0, 10)}</p>
+					<p>${annons.anstallningstyp}</p>
+				</a>
 			</div>
 		`;
 		annonsContainer.innerHTML = html;
