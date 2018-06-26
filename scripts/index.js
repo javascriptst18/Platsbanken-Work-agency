@@ -27,7 +27,7 @@ function match(matches) {
 		html += `
 			
 			<div id="${annons.annonsid}" class="annons">
-				<a href="${annons.annonsurl}">	
+				<a href="${annons.annonsurl}" target="_blank">	
 					<p>${annons.annonsrubrik}</p>
 					<p>${annons.yrkesbenamning}</p>
 					<p>${annons.arbetsplatsnamn}</p>
