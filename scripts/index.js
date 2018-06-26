@@ -25,13 +25,16 @@ function match(matches) {
 		
 
 		html += `
-			<div class="annons">
-				<p>${annons.annonsrubrik}</p>
-				<p>${annons.yrkesbenamning}</p>
-				<p>${annons.arbetsplatsnamn}</p>
-				<p>${annons.kommunnamn}</p>
-				<p>${annons.sista_ansokningsdag.substring(0, 10)}</p>
-				<p>${annons.anstallningstyp}</p>
+			
+			<div id="${annons.annonsid}" class="annons">
+				<a href="${annons.annonsurl}">	
+					<p>${annons.annonsrubrik}</p>
+					<p>${annons.yrkesbenamning}</p>
+					<p>${annons.arbetsplatsnamn}</p>
+					<p>${annons.kommunnamn}</p>
+					<p>${annons.sista_ansokningsdag.substring(0, 10)}</p>
+					<p>${annons.anstallningstyp}</p>
+				</a>
 			</div>
 		`;
 		annonsContainer.innerHTML = html;
