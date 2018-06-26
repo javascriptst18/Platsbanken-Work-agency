@@ -1,5 +1,4 @@
-$banana: #fac863;
-
+// Inlude padding and border in box width;
 * {
   box-sizing: border-box;
 }
@@ -11,7 +10,7 @@ body {
 header {
   background-color: forestgreen;
   border-bottom: solid black 1px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif; //Custom fonts
   padding: 1rem;
   color: white;
   letter-spacing: 3px;
@@ -34,14 +33,6 @@ nav {
     justify-content: space-around;
   }
 
-  .container {
-    border-radius: 10px;
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    margin: 1rem;
-
-  }
   select {
     margin: 1rem;
   }
@@ -53,7 +44,7 @@ nav {
     padding: 1rem;
     margin: 1rem;
     width: 300px;
-    height: 200px;
+    // height: 200px;
 
     a {
       text-decoration: none;
