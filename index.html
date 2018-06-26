@@ -9,53 +9,53 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Platsbanken</title>
-  <title>Lediga jobb</title>
 
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 </head>
 
 <body>
-
+    
   <header>
-    <h1>Lediga jobb</h1>
+    <h1>Work agency</h1>
     <h2>En smartare arbetsförmedling</h2>
+    <!-- DOM adds number of free job positions -->
     <h3 id="antal_platsannonser"></h3>
   </header>
 
   <nav>
+        <!-- Preparation for future selections -->
       <button>Kategorier</button>
       <input type="text"> <input type="submit" value="Sök">
       <select>
           <option value="Stockholm">Stockholm</option>
           <option value="Göteborg">Göteborg</option>
-          <option value="Uppsala">Malmö</option>
-          <option value="Stockholm">Uppsala</option>
+          <option value="Uppsala">Uppsala</option>
+          <option value="Malmö">Malmö</option>
       </select>
   </nav>
-
-  <div class="container">
-
+    
+    <!-- DOM container for job application -->
     <main id="annons">
 
     </main>
 
-  </div>
 
+<!--  -->
   <footer>
       <div class="footerLeft">
-          <a href="https://www.academy.se/"><img src="images/academy.jpg" width="300px">
+          <a href="https://www.academy.se/"><img src="images/academy.jpg" alt="academy logo" width="300px">
           </a>
       </div>
       <div class="footerRight">
-          <p>Academy Javascript S18</p
+          <p>Academy Javascript S18</p>
           <p>Platsbanken-work-agency</p>
           <p>Marcus, Peder, Jeremias</p>
       </div>
 
   </footer>
 
-
+    <!-- Main script our custom scripts -->
   <script src="scripts/index.js"></script>
 
 </body>
