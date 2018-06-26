@@ -1,3 +1,9 @@
+@import "annons";
+@import "footer";
+@import "header";
+@import "nav";
+@import "normalize";
+
 // Inlude padding and border in box width;
 * {
   box-sizing: border-box;
@@ -6,71 +12,13 @@
 body {
   background-color: white;
 }
-
-header {
-  background-color: forestgreen;
-  border-bottom: solid black 1px;
-  font-family: 'Raleway', sans-serif; //Custom fonts
+#annons{
   padding: 1rem;
-  color: white;
-  letter-spacing: 3px;
 }
 
-nav {
-  padding: 1rem;
-  text-align: center;
-  border-bottom: solid black 1px;
-  input {
-    padding: 1rem;
-    margin: 1rem;
-  }
+main {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-  main {
-    font-family: 'Raleway', sans-serif;
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  select {
-    margin: 1rem;
-  }
-  .annons {
-    background-color: white;
-    border: solid black 1px;
-    box-shadow: 4px 4px 4px black;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    margin: 1rem;
-    width: 300px;
-    // height: 200px;
-
-    a {
-      text-decoration: none;
-      color: black;
-    }
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
-
-  footer {
-    background-color: black;
-    padding: 0.5rem;
-    font-family: 'Raleway', sans-serif;
-    color: white;
-    text-align: center;
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .footerLeft {
-    border: solid white 1px;
-  }
-
-  .footerRight {
-    border: solid white 1px;
-  }
