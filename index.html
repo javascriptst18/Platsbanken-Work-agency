@@ -2,61 +2,84 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Platsbanken</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <title>Platsbanken</title>
+    <title>Lediga jobb</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 
 </head>
 
 <body>
-    
-  <header>
-    <h1>Work agency</h1>
-    <h2>En smartare arbetsförmedling</h2>
-    <!-- DOM adds number of free job positions -->
+
+<header>
+    <h1>Platsbanken consulting</h1>
+    <h2>- en smartare arbetsförmedling</h2>
     <h3 id="antal_platsannonser"></h3>
-  </header>
+</header>
 
-  <nav>
-        <!-- Preparation for future selections -->
-      <button>Kategorier</button>
-      <input type="text"> <input type="submit" value="Sök">
-      <select>
-          <option value="Stockholm">Stockholm</option>
-          <option value="Göteborg">Göteborg</option>
-          <option value="Uppsala">Uppsala</option>
-          <option value="Malmö">Malmö</option>
-      </select>
-  </nav>
-    
-    <!-- DOM container for job application -->
+<nav>
+
+    <select id="selectLan" name="lan">
+        <option value="10">Blekinge län</option>
+        <option value="20">Dalarnas län</option>
+        <option value="9">Gotlands län</option>
+        <option value="21">Gävleborgs län</option>
+        <option value="13">Hallands län</option>
+        <option value="23">Jämtlands län</option>
+        <option value="6">Jönköpings län</option>
+        <option value="8">Kalmar län</option>
+        <option value="7">Kronobergs län</option>
+        <option value="25">Norrbottens län</option>
+        <option value="12">Skåne län</option>
+        <option value="1">Stockholms län</option>
+        <option value="4">Södermanlands län</option>
+        <option value="3">Uppsala län</option>
+        <option value="17">Värmlands län</option>
+        <option value="24">Västerbottens län</option>
+        <option value="22">Västernorrlands län</option>
+        <option value="19">Västmanlands län</option>
+        <option value="14">Västra Götalands län</option>
+        <option value="18">Örebro län</option>
+        <option value="5">Östergötlands län</option>
+    </select>
+    <button class="kategorier">Kategorier</button>
+    <input type="text" id="textInputField"></input>
+    <input type="submit" value="Sök" id="submitButton"></input>
+
+
+</nav>
+
+<div class="container">
+
     <main id="annons">
-
     </main>
 
+</div>
 
-<!--  -->
-  <footer>
-      <div class="footerLeft">
-          <a href="https://www.academy.se/"><img src="images/academy.jpg" alt="academy logo" width="300px">
-          </a>
-      </div>
-      <div class="footerRight">
-          <p>Academy Javascript S18</p>
-          <p>Platsbanken-work-agency</p>
-          <p>Marcus, Peder, Jeremias</p>
-      </div>
+<footer>
+    <div class="footerLeft">
+        <a href="https://www.academy.se/"><img src="images/academy.jpg" width="300px">
+        </a>
+    </div>
+    <div class="footerRight">
+        <p>&copy Platsbanken-work-agency</p>
+        <p>Academy Javascript S18</p
+        <p>Marcus, Peder, Jeremias</p>
+    </div>
 
-  </footer>
+</footer>
 
-    <!-- Main script our custom scripts -->
-  <script src="scripts/index.js"></script>
+
+<script src="scripts/index.js"></script>
 
 </body>
 
