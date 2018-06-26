@@ -5,4 +5,4 @@ async function searchByCriteria(searchCriteria) {
   console.log(matches);
 }
 
-searchByCriteria('platsannonser/matchning?lanid=1&yrkesomradeid=3&antalrader=30');
+searchByCriteria('platsannonser/matchning?lanid=1&yrkesomradeid=3&antalrader=10');
