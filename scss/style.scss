@@ -1,20 +1,63 @@
 $banana: #fac863;
 
-.🍌 {
-  background-color: $banana;
+* {
+  box-sizing: border-box;
 }
 body{
-  background-color: lightcoral;
-}
-.container{
   background-color: white;
-  padding: 1rem;
+}
+header{
+  background-color: forestgreen;
+  border-bottom: solid black 1px;
+  font-family: 'Raleway', sans-serif;
+  padding:1rem;
+  color: white;
+  letter-spacing: 3px;
+}
+main{
+  font-family: 'Raleway', sans-serif;
+}
+
+.container{
+  border-radius: 10px;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  margin: 0.5rem;
 }
 .annons{
   background-color: white;
-  bordeR:solid black 1px;
+  border:solid black 1px;
+  margin-bottom: 1rem;
   padding: 1rem;
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  &:hover{
+    transform: scale(1.02);
+  }
 }
+
 footer{
-  background-color: lightblue;
+  background-color: forestgreen;
+  padding: 0.5rem;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+
+}
+.annonsrubrik {
+  font-size: 1rem;
+}
+.arbetsplatsnamn {
+  font-weight: bold;
+}
+.annonsid {
+  font-size: 0.8rem;
+}
+.publiceraddatum{
+  font-size: 0.7rem;
+}
+.sista_ansokningsdag{
+  font-size: 0.7rem;
 }
