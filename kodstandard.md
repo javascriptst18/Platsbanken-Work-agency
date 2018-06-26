@@ -7,6 +7,7 @@
 * Använd enbart **camelCase** för ID
 * Använd enbart `let` och `const`
 * Kommentarer över flera rader skrivs på följande sätt:
+* Container som div class namn
 ```js
 /** 
  * Multiline comment
