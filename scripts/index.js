@@ -52,12 +52,12 @@ function totannonser(matches) {
     const antal_platsannonser = document.querySelector("#antal_platsannonser");
     let annonsData = matches.matchningslista;
     // Printout total number of job applications
-    let html = `Totalt antal annonser i Stockholms län: ${annonsData.antal_platsannonser}`;
+    let html = `Totalt antal annonser i ${matches.matchningslista.matchningdata[0].lan}: ${annonsData.antal_platsannonser}`;
     antal_platsannonser.innerHTML = html;
 }
 
 //Adds an eventListener to the select-element
-document.getElementById("selectLan").onchange=chooseRegion;
-
+let lan = document.getElementById("selectLan");
+lan.onchange=chooseRegion;
 //chooseRegion
 function chooseRegion(event) {searchByCriteria(`platsannonser/matchning?lanid=${event.target.value}`)}
