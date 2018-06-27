@@ -1,0 +1,35 @@
+
+.annons {
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
+  border: solid black 1px;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px black;
+  margin-bottom: 1rem;
+  padding: 15px;
+  margin: 1rem;
+  width: 300px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  &:hover {
+    transform: scale(1.1);
+    background-color: #00aa3c;
+  }
+}
+.annonsrubrik {
+  font-weight: bold;
+}
+.yrkesbenamning {
+font-size: 0.8rem;
+}
+.arbetsplatsnamn {
+  font-size: 0.8rem;
+}
+.kommunnamn {
+  font-size: 0.8rem;
+}
+.anstallningstyp {
+  font-size: 0.8rem;
+}
