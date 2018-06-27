@@ -20,18 +20,28 @@
 
 <body>
 
-    <header>
-        <h1>Platsbanken consulting</h1>
-        <h2>- en smartare arbetsförmedling</h2>
-        <h3 id="antal_platsannonser"></h3>
+<header>
+    <h1>Platsbanken consulting</h1>
+    <h2>- en smartare arbetsförmedling</h2>
+    <h3 id="antal_platsannonser"></h3>
 
-    </header>
+</header>
 
-    <nav>
-        <!-- Preparation for future selections -->
-        <form id="filteringForm">
-            <input type="text" id="keyword">
-            <input type="submit" value="Sök">
+<nav>
+    <!-- Preparation for future selections -->
+    <div id="filteringForm">
+
+        <div class="nav-box">
+
+            <input type="text" id="keyword" placeholder="Fritextsök">
+
+            <input type="submit" value="Sök" class="searchButton">
+
+        </div>
+
+        <div class="nav-box">
+            <label for="selectLan" class="labelSelectLan">Select län</label>
+
             <select id="selectLan">
                 <option value="1">Stockholm län</option>
                 <option value="20">Dalarnas län</option>
@@ -56,37 +66,49 @@
                 <option value="5">Östergötlands län</option>
             </select>
 
+        </div>
+
+        <div class="nav-box">
+
             <label for="numberOfDisplay" class="labelNumberOfDisplay">Number of displayed results</label>
+
             <select id="numberOfDisplay" class="numberOfDisplay">
+
                 <option value="10">10</option>
                 <option value="25">25</option>
                 <option value="50">50</option>
+
                 <option value="100">100</option>
+
             </select>
+
+        </div>
+
         </form>
-    </nav>
 
-    <!-- DOM container for job application -->
+</nav>
 
-    <main id="annons">
-    </main>
+<!-- DOM container for job application -->
 
-    <footer>
-        <div class="footerLeft">
-            <a href="https://www.academy.se/">
-                <img src="images/academy.jpg" width="300px">
-            </a>
-        </div>
-        <div class="footerRight">
-            <p>&copy Platsbanken-work-agency</p>
-            <p>Academy Javascript S18</p>
-            <p>Marcus, Peder, Jeremias</p>
-        </div>
+<main id="annons">
+</main>
 
-    </footer>
+<footer>
+    <div class="footerLeft">
+        <a href="https://www.academy.se/">
+            <img src="images/academy.jpg" width="300px">
+        </a>
+    </div>
+    <div class="footerRight">
+        <p>&copy Platsbanken-work-agency</p>
+        <p>Academy Javascript S18</p>
+        <p>Marcus, Peder, Jeremias</p>
+    </div>
+
+</footer>
 
 
-    <script src="scripts/index.js"></script>
+<script src="scripts/index.js"></script>
 
 </body>
 
