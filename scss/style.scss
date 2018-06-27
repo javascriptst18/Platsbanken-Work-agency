@@ -1,20 +1,19 @@
-$banana: #fac863;
+@import "annons";
+@import "footer";
+@import "header";
+@import "nav";
+@import "normalize";
 
-.🍌 {
-  background-color: $banana;
+// Inlude padding and border in box width;
+* {
+  box-sizing: border-box;
 }
-body{
-  background-color: lightcoral;
-}
-.container{
+
+body {
   background-color: white;
+}
+#annons{
   padding: 1rem;
 }
-.annons{
-  background-color: white;
-  bordeR:solid black 1px;
-  padding: 1rem;
-}
-footer{
-  background-color: lightblue;
-}
+
+

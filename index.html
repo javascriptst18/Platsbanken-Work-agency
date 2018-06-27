@@ -6,54 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/normalize.css">
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
     <title>Platsbanken</title>
     <title>Lediga jobb</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
 </head>
 
 <body>
 
 <header>
+    <h1>Platsbanken consulting</h1>
+    <h2>- en smartare arbetsförmedling</h2>
+    <h3 id="antal_platsannonser"></h3>
 
-    <h1>Lediga jobb</h1>
-    <h2>En smartare arbetsförmedling</h2>
+  </header>
 
-    <div class="container">
-        <nav>
-            <button>Kategorier</button>
-            <button>Sök</button>
-        </nav>
-        <main>
-        <h2>
-            Lediga jobb just nu
-        </h2>
+  <nav>
+        <!-- Preparation for future selections -->
+      <button>Kategorier</button>
+	<form id="filteringForm">
+      <input type="text"> 
+      <input type="submit" value="Sök">
+      <select id="selectLan">
+        <option value="10">Blekinge län</option>
+        <option value="20">Dalarnas län</option>
+        <option value="9">Gotlands län</option>
+        <option value="21">Gävleborgs län</option>
+        <option value="13">Hallands län</option>
+        <option value="23">Jämtlands län</option>
+        <option value="6">Jönköpings län</option>
+        <option value="8">Kalmar län</option>
+        <option value="7">Kronobergs län</option>
+        <option value="25">Norrbottens län</option>
+        <option value="12">Skåne län</option>
+        <option value="1">Stockholms län</option>
+        <option value="4">Södermanlands län</option>
+        <option value="3">Uppsala län</option>
+        <option value="17">Värmlands län</option>
+        <option value="24">Västerbottens län</option>
+        <option value="22">Västernorrlands län</option>
+        <option value="19">Västmanlands län</option>
+        <option value="14">Västra Götalands län</option>
+        <option value="18">Örebro län</option>
+        <option value="5">Östergötlands län</option>
+      </select>
 
-        <div class="annons">
-        <p>Innehåll</p>
-            <p>Innehåll</p>
-            <p>Innehåll</p>
-        </div>
-            <div class="annons">
-                <p>Innehåll</p>
-                <p>Innehåll</p>
-                <p>Innehåll</p>
-            </div>
-            <div class="annons">
-                <p>Innehåll</p>
-                <p>Innehåll</p>
-                <p>Innehåll</p>
-            </div>
-        </main>
+      <label for="numberOfDisplay" class="labelNumberOfDisplay">Number of displayed results</label>
+      <select id="numberOfDisplay" class="numberOfDisplay">
+      	<option value="10">10</option>
+		<option value="25">25</option>
+		<option value="50">50</option>
+		<option value="100">100</option>
+      </select>
+    </form>
+  </nav>
+    
+    <!-- DOM container for job application -->
 
-        <footer>
-        <p>Academy Javascript S18</p>
-            <p>Platsbanken-work-agency</p>
-        </footer>
+    <main id="annons">
+    </main>
 
+<footer>
+    <div class="footerLeft">
+        <a href="https://www.academy.se/"><img src="images/academy.jpg" width="300px">
+        </a>
+    </div>
+    <div class="footerRight">
+        <p>&copy Platsbanken-work-agency</p>
+        <p>Academy Javascript S18</p
+        <p>Marcus, Peder, Jeremias</p>
     </div>
 
-</header>
+</footer>
 
 
 <script src="scripts/index.js"></script>
