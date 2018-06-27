@@ -13,5 +13,12 @@ body {
   background-color: white;
 }
 
-
+.container{
+  display:flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+aside{
+  flex: 0.2;
+}
 
