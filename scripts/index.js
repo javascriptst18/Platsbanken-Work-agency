@@ -7,7 +7,7 @@ async function searchByCriteria(searchCriteria) {
 	const responseObject = await fetch(baseURL + searchCriteria);
 	const matches = await responseObject.json();
 
-	// console.log(matches);
+	console.log(matches);
 
 	 // Call to function that creates job application cards 
 	createCards(matches);
@@ -25,20 +25,37 @@ function createCards(matches) {
 	let html = ""; // Empty string
 	for (let annons of annonsData) {
 		
+		if (annons.sista_ansokningsdag) {
 		// Append empty string with HTML elements
-		html += `
-			
-			<div id="${annons.annonsid}" class="annons">
-				<a href="${annons.annonsurl}" target="_blank">	
-					<p>${annons.annonsrubrik}</p>
-					<p>${annons.yrkesbenamning}</p>
-					<p>${annons.arbetsplatsnamn}</p>
-					<p>${annons.kommunnamn}</p>
-					<p>${annons.sista_ansokningsdag.substring(0, 10)}</p>
-					<p>${annons.anstallningstyp}</p>
-				</a>
-			</div>
-		`;
+			html += `
+				
+				<div id="${annons.annonsid}" class="annons">
+					<a href="${annons.annonsurl}" target="_blank">	
+						<p>${annons.annonsrubrik}</p>
+						<p>${annons.yrkesbenamning}</p>
+						<p>${annons.arbetsplatsnamn}</p>
+						<p>${annons.kommunnamn}</p>
+						<p>${annons.sista_ansokningsdag.substring(0, 10)}</p>
+						<p>${annons.anstallningstyp}</p>
+					</a>
+				</div>
+			`;
+		}
+		else {
+			html += `
+				
+				<div id="${annons.annonsid}" class="annons">
+					<a href="${annons.annonsurl}" target="_blank">	
+						<p>${annons.annonsrubrik}</p>
+						<p>${annons.yrkesbenamning}</p>
+						<p>${annons.arbetsplatsnamn}</p>
+						<p>${annons.kommunnamn}</p>
+						<p>No last sign up day announced</p>
+						<p>${annons.anstallningstyp}</p>
+					</a>
+				</div>
+			`;
+		}
 
 		// Printout HTML string with HTML elements
 		annonsContainer.innerHTML = html;
@@ -58,4 +75,22 @@ function totannonser(matches) {
 }
 
 
+	
+	const formSubmit = document.querySelector("#filteringForm");
+	formSubmit.addEventListener("submit", function(event) {
+		event.preventDefault();
+		let numberOfDisplaysSelect = document.querySelector("#numberOfDisplay").value;
+		let url = `platsannonser/matchning?lanid=1&antalrader=${numberOfDisplaysSelect}`;
+		if (numberOfDisplaysSelect == 250) {
+			console.log("UNLIMITED POWAAAH");
+			formSubmit.insertAdjacentHTML("afterbegin", `<img style="width: 100%;" src="https://i.imgflip.com/17j2vf.jpg?a424968">`);
+			searchByCriteria(url);
 
+		}
+		searchByCriteria(url);
+	});
+
+
+function numberOfDisplays() {
+
+}
