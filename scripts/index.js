@@ -7,7 +7,8 @@ async function searchByCriteria(searchCriteria) {
     const responseObject = await fetch(baseURL + searchCriteria);
     const matches = await responseObject.json();
 
-    // console.log(matches);
+	console.log(matches);
+
 
     // Call to function that creates job application cards
     createCards(matches);
@@ -19,25 +20,44 @@ async function searchByCriteria(searchCriteria) {
 
 // int argument is object gained from searchByCritera
 function createCards(matches) {
-    // Select main with id annons and printout objects from annons
-    const annonsContainer = document.querySelector("#annons");
-    let annonsData = matches.matchningslista.matchningdata;
-    let html = ""; // Empty string
-    for (let annons of annonsData) {
-
-        // Append empty string with HTML elements
-        html += `
-			
-			<div id="${annons.annonsid}" class="annons">
-				<a href="${annons.annonsurl}" target="_blank">	
-					<p class="annonsrubrik">${annons.annonsrubrik}</p>
-					<p class="arbetsplatsnamn">Företag: ${annons.arbetsplatsnamn}</p>
-					<p class="kommunnamn">Kommun: ${annons.kommunnamn}</p>
-					<p class="yrkesbenamning">Yrke: ${annons.yrkesbenamning}</p>		
-					<p class="anstallningstyp">Anställningsform: ${annons.anstallningstyp}</p>
-				</a>
-			</div>
-		`;
+  
+	// Select main with id annons and printout objects from annons
+	const annonsContainer = document.querySelector("#annons");
+	let annonsData = matches.matchningslista.matchningdata;
+	let html = ""; // Empty string
+	for (let annons of annonsData) {
+		
+		if (annons.sista_ansokningsdag) {
+		// Append empty string with HTML elements
+			html += `
+				
+				<div id="${annons.annonsid}" class="annons">
+					<a href="${annons.annonsurl}" target="_blank">	
+						<p>${annons.annonsrubrik}</p>
+						<p>${annons.yrkesbenamning}</p>
+						<p>${annons.arbetsplatsnamn}</p>
+						<p>${annons.kommunnamn}</p>
+						<p>${annons.sista_ansokningsdag.substring(0, 10)}</p>
+						<p>${annons.anstallningstyp}</p>
+					</a>
+				</div>
+			`;
+		}
+		else {
+			html += `
+				
+				<div id="${annons.annonsid}" class="annons">
+					<a href="${annons.annonsurl}" target="_blank">	
+						<p>${annons.annonsrubrik}</p>
+						<p>${annons.yrkesbenamning}</p>
+						<p>${annons.arbetsplatsnamn}</p>
+						<p>${annons.kommunnamn}</p>
+						<p>No last sign up day announced</p>
+						<p>${annons.anstallningstyp}</p>
+					</a>
+				</div>
+			`;
+		}
 
         // Printout HTML string with HTML elements
         annonsContainer.innerHTML = html;
@@ -56,8 +76,26 @@ function totannonser(matches) {
     antal_platsannonser.innerHTML = html;
 }
 
-//Adds an eventListener to the select-element
-let lan = document.getElementById("selectLan");
-lan.onchange=chooseRegion;
-//chooseRegion
-function chooseRegion(event) {searchByCriteria(`platsannonser/matchning?lanid=${event.target.value}`)}
+
+
+	
+	const formSubmit = document.querySelector("#filteringForm");
+	formSubmit.addEventListener("submit", function(event) {
+		event.preventDefault();
+		let numberOfDisplaysSelect = document.querySelector("#numberOfDisplay").value;
+		let lan = document.querySelector("#selectLan").value;
+    let url = `platsannonser/matchning?lanid=${lan}&antalrader=${numberOfDisplaysSelect}`?;
+   
+
+
+		}
+		searchByCriteria(url);
+	});
+
+
+
+
+function numberOfDisplays() {
+
+}
+

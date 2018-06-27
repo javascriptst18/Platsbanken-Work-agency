@@ -16,9 +16,26 @@ body {
   padding: 1rem;
 }
 
-main {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
+nav {
+  font-family: 'Raleway', sans-serif;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: solid black 1px;
+  input {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .labelNumberOfDisplay {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .numberOfDisplay {
+    width: 90%;
+    font-size: 1.5em;
+    padding: 1rem;
+  }

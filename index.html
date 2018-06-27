@@ -24,11 +24,16 @@
     <h1>Platsbanken consulting</h1>
     <h2>- en smartare arbetsförmedling</h2>
     <h3 id="antal_platsannonser"></h3>
-</header>
 
-<nav>
+  </header>
 
-    <select id="selectLan" name="lan">
+  <nav>
+        <!-- Preparation for future selections -->
+      <button>Kategorier</button>
+	<form id="filteringForm">
+      <input type="text"> 
+      <input type="submit" value="Sök">
+      <select id="selectLan">
         <option value="10">Blekinge län</option>
         <option value="20">Dalarnas län</option>
         <option value="9">Gotlands län</option>
@@ -49,14 +54,23 @@
         <option value="19">Västmanlands län</option>
         <option value="14">Västra Götalands län</option>
         <option value="18">Örebro län</option>
-        <option value="5">Östergötlands län</option>
-    </select>
-    <button class="kategorier">Kategorier</button>
-    <input type="text" id="textInputField"></input>
-    <input type="submit" value="Sök" id="submitButton"></input>
+        <option value="5">Östergötlands län</option
+      </select>
+
+      <label for="numberOfDisplay" class="labelNumberOfDisplay">Number of displayed results</label>
+      <select id="numberOfDisplay" class="numberOfDisplay">
+      	<option value="10">10</option>
+		<option value="25">25</option>
+		<option value="50">50</option>
+		<option value="100">100</option>
+      </select>
+    </form>
+  </nav>
+    
+    <!-- DOM container for job application -->
+    <main id="annons">
 
 
-</nav>
 
 <div class="container">
 
