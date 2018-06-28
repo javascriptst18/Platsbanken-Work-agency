@@ -41,6 +41,7 @@
                 <div class="nav-box">
                     <label for="selectKategori" class="labelSelectKategori">Select kategori</label>
                     <select id="selectKategori">
+                        <option value="99">Välj kategori</option>
                         <option value="0">Administration, ekonomi, juridik</option>
                         <option value="1">Bygg och anläggning</option>
                         <option value="20">Chefer och verksamhetsledare</option>
@@ -124,14 +125,16 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="close">&times;</span>
-                        <h2>Modal Header</h2>
+                        <h2 id="infoHeader"></h2>
                     </div>
-                    <div class="modal-body">
-                        <p>Some text in the Modal Body</p>
-                        <p>Some other text...</p>
+                    <div id="modalContent" class="modal-body">
+                        <h2 id="infoTitle"></h2>
+                        <p id="jobDescription"></p>
+                        <p id="workTime"></p>
+                        <p id="workType"></p>
+                        <p></p>
                     </div>
                     <div class="modal-footer">
-                        <h3>Modal Footer</h3>
                     </div>
                 </div>
             </div>
@@ -142,17 +145,135 @@
             <a href="https://www.academy.se/">
                 <img src="images/academy.jpg" width="300px">
             </a>
-        </div>
-        <div class="footerRight">
-            <p>&copy Platsbanken-work-agency</p>
-            <p>Academy Javascript S18</p>
-            <p>Marcus, Peder, Jeremias</p>
-        </div>
-
-    </footer>
+            <h3 id="antal_platsannonser"></h3>
 
 
-    <script src="scripts/index.js"></script>
+            <nav>
+                <!-- Preparation for future selections -->
+                <form id="filteringForm">
+
+                    <div class="nav-box">
+
+                        <input type="text" id="keyword" placeholder="Fritextsök">
+
+                        <input type="submit" value="Sök" class="searchButton">
+
+                    </div>
+                    <div class="nav-box">
+                        <label for="selectKategori" class="labelSelectKategori">Select kategori</label>
+                        <select id="selectKategori">
+                            <option value="0">Administration, ekonomi, juridik</option>
+                            <option value="1">Bygg och anläggning</option>
+                            <option value="20">Chefer och verksamhetsledare</option>
+                            <option value="3">Data/IT</option>
+                            <option value="5">Försäljning, inköp, marknadsföring</option>
+                            <option value="6">Hantverksyrken</option>
+                            <option value="7">Hotell, restaurang, storhushåll</option>
+                            <option value="8">Hälso- och sjukvård</option>
+                            <option value="9">Industriell tillverkning</option>
+                            <option value="10">Installation, drift, underhåll</option>
+                            <option value="4">Kropps- och skönhetsvård</option>
+                            <option value="11">Kultur, media, design</option>
+                            <option value="22">Militärt arbete</option>
+                            <option value="13">Naturbruk</option>
+                            <option value="14">Naturvetenskapligt arbete</option>
+                            <option value="15">Pedagogiskt arbete</option>
+                            <option value="12">Sanering och renhållning</option>
+                            <option value="16">Socialt arbete</option>
+                            <option value="17">Säkerhetsarbete</option>
+                            <option value="18">Tekniskt arbete</option>
+                            <option value="19">Transport</option>
+                        </select>
+
+                    </div>
+                    <div class="nav-box">
+                        <label for="selectLan" class="labelSelectLan">Select län</label>
+
+                        <select id="selectLan">
+                            <option value="1">Stockholms län</option>
+                            <option value="20">Dalarnas län</option>
+                            <option value="9">Gotlands län</option>
+                            <option value="21">Gävleborgs län</option>
+                            <option value="13">Hallands län</option>
+                            <option value="23">Jämtlands län</option>
+                            <option value="6">Jönköpings län</option>
+                            <option value="8">Kalmar län</option>
+                            <option value="7">Kronobergs län</option>
+                            <option value="25">Norrbottens län</option>
+                            <option value="12">Skåne län</option>
+                            <option value="10">Blekinge län</option>
+                            <option value="4">Södermanlands län</option>
+                            <option value="3">Uppsala län</option>
+                            <option value="17">Värmlands län</option>
+                            <option value="24">Västerbottens län</option>
+                            <option value="22">Västernorrlands län</option>
+                            <option value="19">Västmanlands län</option>
+                            <option value="14">Västra Götalands län</option>
+                            <option value="18">Örebro län</option>
+                            <option value="5">Östergötlands län</option>
+                        </select>
+
+                    </div>
+
+                    <div class="nav-box">
+
+                        <label for="numberOfDisplay" class="labelNumberOfDisplay">Number of displayed results</label>
+
+                        <select id="numberOfDisplay" class="numberOfDisplay">
+
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+
+                            <option value="100">100</option>
+
+                        </select>
+
+                    </div>
+
+                </form>
+
+            </nav>
+            </header>
+            <!-- DOM container for job application -->
+            <div class="container">
+                <aside></aside>
+                <main id="annons">
+                </main>
+                <aside>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                                <h2>Modal Header</h2>
+                            </div>
+                            <div class="modal-body">
+                                <p>Some text in the Modal Body</p>
+                                <p>Some other text...</p>
+                            </div>
+                            <div class="modal-footer">
+                                <h3>Modal Footer</h3>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <footer>
+                <div class="footerLeft">
+                    <a href="https://www.academy.se/">
+                        <img src="images/academy.jpg" width="300px">
+                    </a>
+                </div>
+                <div class="footerRight">
+                    <p>&copy Platsbanken-work-agency</p>
+                    <p>Academy Javascript S18</p>
+                    <p>Marcus, Peder, Jeremias</p>
+                </div>
+
+            </footer>
+
+
+            <script src="scripts/index.js"></script>
 
 </body>
 
