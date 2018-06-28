@@ -26,11 +26,14 @@ async function applicationInfo(searchCriteria) {
 	const responseObject = await fetch(baseURL + searchCriteria);
 	const matches = await responseObject.json();
 
+//	createModal();
 	// console.log(matches);
 
-	createMoreInfo(matches);
+	// createMoreInfo(matches);
 
 }
+
+// <a href="${annons.annonsurl}" target="_blank"></a>
 
 // int argument is object gained from searchByCritera
 function createCards(matches) {
@@ -43,33 +46,19 @@ function createCards(matches) {
 
 		html += `
 				
-				<div id="${annons.annonsid}" class="annons card">
-					<a href="${annons.annonsurl}" target="_blank">	
+				<div id="${annons.annonsid}" class="annons card">	
 						<h2 class="annonsrubrik">${annons.annonsrubrik}</h2>
 						<p class="yrkesbenamning">${annons.yrkesbenamning}</p>
 						<p class="arbetsplatsnamn">${annons.arbetsplatsnamn}</p>
 						<p class="kommunnamn">${annons.kommunnamn}</p>
 						<p id="sista_ansokningsdag"></p>
 						<p class="anstallningstyp">${annons.anstallningstyp}</p>
-					</a>
+					
 
-						<button>Mer info</button>
-						<p class="test"></p>
-						<button id="myBtn">Open Modal</button>
+	
+						<button id="myBtn">Mer info</button>
 
-						<div class="modal-content">
-					    <div class="modal-header">
-					      <span class="close">&times;</span>
-					      <h2>Modal Header</h2>
-					    </div>
-					    <div class="modal-body">
-					      <p>Some text in the Modal Body</p>
-					      <p>Some other text...</p>
-					    </div>
-					    <div class="modal-footer">
-					      <h3>Modal Footer</h3>
-					    </div>
-					  </div>
+						
 				</div>
 			`;
 
@@ -99,7 +88,7 @@ function createModal(matches) {
 
 	const btn = document.getElementById("myBtn");
 
-	const span = document.getElementById("close")[0];
+	const span = document.querySelector(".close");
 
 	btn.onclick = function() {
 		modal.style.display = "block";
@@ -142,7 +131,8 @@ formSubmit.addEventListener("submit", function (event) {
 	let numberOfDisplaysSelect = document.querySelector("#numberOfDisplay").value;
 	let lan = document.querySelector("#selectLan").value;
 	let searchWord = document.querySelector("#keyword").value;
-	let url = `platsannonser/matchning?nyckelord=${searchWord}&lanid=${lan}&antalrader=${numberOfDisplaysSelect}`;
+	let kategori = document.querySelector("#selectKategori").value;
+	let url = `platsannonser/matchning?yrkesomradeid=${kategori}&nyckelord=${searchWord}&lanid=${lan}&antalrader=${numberOfDisplaysSelect}`;
 	searchByCriteria(url);
 })
 
@@ -152,10 +142,25 @@ formSubmit.addEventListener("submit", function (event) {
 function bindCardListeners() {
 	const cards = document.querySelectorAll(".card");
 	for (let card of cards) {
+
 		card.addEventListener("click", function(event){
 		/*	console.log(event.target)
 			console.log(this.target);
 			console.log(this.id);*/
+
+	const modal = document.getElementById('myModal');
+	const span = document.querySelector(".close");
+	modal.style.display = "block";
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+console.log(bindCardListeners);
 
 			let url = `platsannonser/${this.id}`
 			applicationInfo(url);
