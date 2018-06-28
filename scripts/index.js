@@ -49,16 +49,10 @@ function createCards(matches) {
 				
 				<div id="${annons.annonsid}" class="annons card">	
 						<h2 class="annonsrubrik">${annons.annonsrubrik}</h2>
-						<p class="yrkesbenamning">${annons.yrkesbenamning}</p>
 						<p class="arbetsplatsnamn">${annons.arbetsplatsnamn}</p>
 						<p class="kommunnamn">${annons.kommunnamn}</p>
 						<p id="sista_ansokningsdag"></p>
-						<p class="anstallningstyp">${annons.anstallningstyp}</p>
-					
-
-	
-						<button id="myBtn">Mer info</button>
-
+						<p>Intresserad? Tryck för att läsa mer!</p>
 						
 				</div>
 			`;
@@ -91,14 +85,14 @@ function createModal(matches) {
 
 	const span = document.querySelector(".close");
 
-	btn.onclick = function() {
+	btn.onclick = function () {
 		modal.style.display = "block";
 	}
-	span.onclick = function() {
+	span.onclick = function () {
 		modal.style.display = "none";
 	}
 
-	window.onclick = function(event) {
+	window.onclick = function (event) {
 		if (event.target == modal) {
 			modal.style.display = "none";
 		}
@@ -123,13 +117,10 @@ function appendModal(matches) {
 
 	html = `
 		<p><b>Arbetsplats: </b>${matches.platsannons.arbetsplats.arbetsplatsnamn}</p>
-		<p><b>Kontaktperson: </b>${matches.platsannons.arbetsplats.kontaktpersonlista.kontaktpersondata[0].namn} </p>
-		<p><b>Tel: </b>${matches.platsannons.arbetsplats.kontaktpersonlista.kontaktpersondata[0].telefonnummer} </p>
-		<p><b>Mail: </b>${matches.platsannons.arbetsplats.kontaktpersonlista.kontaktpersondata[0].epostadress} </p>
 		<p><b>Arbetstid: </b>${matches.platsannons.villkor.arbetstid}</p>
 		<p><b>Varaktighet: </b>${matches.platsannons.villkor.varaktighet}</p>
 		<p>${matches.platsannons.annons.annonstext.substring(0, 500)}...
-			<a href="${matches.platsannons.annons.platsannonsUrl}">gå till annons</a></p>
+			<a href="${matches.platsannons.annons.platsannonsUrl}" target="_blank">gå till annons</a></p>
 
 
 
@@ -166,7 +157,7 @@ formSubmit.addEventListener("submit", function (event) {
 	let lan = document.querySelector("#selectLan").value;
 	let searchWord = document.querySelector("#keyword").value;
 	let kategori = document.querySelector("#selectKategori").value;
-	if (kategori == "99"){
+	if (kategori == "99") {
 		kategori = "";
 	}
 	let url = `platsannonser/matchning?yrkesomradeid=${kategori}&nyckelord=${searchWord}&lanid=${lan}&antalrader=${numberOfDisplaysSelect}`;
@@ -180,27 +171,27 @@ function bindCardListeners() {
 	const cards = document.querySelectorAll(".card");
 	for (let card of cards) {
 
-		card.addEventListener("click", function(event){
+		card.addEventListener("click", function (event) {
 			/*	console.log(event.target)
 				console.log(this.target);
 				console.log(this.id);*/
 
 			let url = `platsannonser/${this.id}`
-				applicationInfo(url);
+			applicationInfo(url);
 
 			const modal = document.getElementById('myModal');
 			const span = document.querySelector(".close");
 			modal.style.display = "block";
-			span.onclick = function() {
+			span.onclick = function () {
 				modal.style.display = "none";
 			}
 
-			window.onclick = function(event) {
+			window.onclick = function (event) {
 				if (event.target == modal) {
 					modal.style.display = "none";
 				}
 			}
-				
+
 		})
 	}
 }
