@@ -1,21 +1,29 @@
 
 header {
-  background-color: #00aa3c;
+  background-color: white;
   border-bottom: solid black 1px;
-  padding: 1rem;
-  color: white;
-  text-align: center;
+  color: black;
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  text-align: left;
+  width: 100%;
+  img{
+  width: 80%;
+    display: inline-block;
+    margin-left: 1rem;
+    margin-top:2rem;
+  }
+  @media screen and (min-width: 800px)  {
+    img{
+      width: 30%;
+    }
+  }
 }
-h1 {
-  font-family: "Fjalla One", sans-serif;
-  font-size: 2rem;
-  padding: 1rem;
-}
-h2{
-  font-family: Raleway;
-  font-size: 1.3rem;
-}
+
 h3 {
-  font-family: 'Open Sans', sans-serif;
+  display: block;
+  font-family: Raleway;
   font-size: 1rem;
+  text-align: center;
+  width: 80%;
 }

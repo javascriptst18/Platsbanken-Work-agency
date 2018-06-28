@@ -1,8 +1,6 @@
 nav {
-  border-bottom: solid black 1px;
   display: flex;
   font-family: 'Raleway', sans-serif;
-
 }
 #filteringForm{
   margin: 0 auto;
@@ -20,4 +18,8 @@ nav {
 }
 .labelNumberOfDisplay, .labelSelectLan, #keyword{
   text-align: right;
+}
+.searchButton{
+  background-color: #00aa3c;
+  color: white;
 }
