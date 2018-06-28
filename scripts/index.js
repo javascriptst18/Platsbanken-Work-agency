@@ -31,12 +31,12 @@ function createCards(matches) {
 				
 				<div id="${annons.annonsid}" class="annons">
 					<a href="${annons.annonsurl}" target="_blank">	
-						<p>${annons.annonsrubrik}</p>
-						<p>${annons.yrkesbenamning}</p>
-						<p>${annons.arbetsplatsnamn}</p>
-						<p>${annons.kommunnamn}</p>
+						<p class="annonsrubrik">${annons.annonsrubrik}</p>
+						<p class="yrkesbenamning">${annons.yrkesbenamning}</p>
+						<p class="arbetsplatsnamn">${annons.arbetsplatsnamn}</p>
+						<p class="kommunnamn">${annons.kommunnamn}</p>
 						<p id="sista_ansokningsdag"></p>
-						<p>${annons.anstallningstyp}</p>
+						<p class="anstallningstyp">${annons.anstallningstyp}</p>
 					</a>
 				</div>
 			`;
@@ -46,7 +46,7 @@ function createCards(matches) {
 		// If last date exist insert the HTML at the paragraph "sista_ansokningsdag" 
 		if (annons.sista_ansokningsdag) {
 			let sistaAnsokan = document.querySelector("#sista_ansokningsdag");
-			sistaAnsokan.insertAdjacentHTML("beforeend", `${annons.sista_ansokningsdag.substring(0, 10)}`)
+			sistaAnsokan.insertAdjacentHTML("beforeend", `Ansök senast: ${annons.sista_ansokningsdag.substring(0, 10)}`)
 		}
 	}
 }

@@ -1,46 +1,32 @@
-#annons{
+#annons {
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   flex: 1;
   justify-content: center;
 }
+
 .annons {
   font-family: 'Raleway', sans-serif;
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 0 2px black;
   margin-bottom: 1rem;
-  adding: 1rem;
   width: 100%;
   padding: 1rem;
   a {
     text-decoration: none;
     color: black;
   }
-
-  h2 {
-    color: #00aa3c;
+  p {
+    margin: .4rem; 
   }
- /*  &:hover {
-    transform: scale(1.1);
-    background-color: #00aa3c;
-  } */
-}
-.annonsrubrik {
-  font-weight: bold;
-}
-.yrkesbenamning {
-font-size: 0.8rem;
-}
-.arbetsplatsnamn {
-  font-size: 0.8rem;
-}
-.kommunnamn {
-  font-size: 0.8rem;
-}
-.anstallningstyp {
-  font-size: 0.8rem;
+  .anstallningstyp {
+    font-size: x-small;
+  }
+  .yrkesbenamning {
+    font-size: x-large;
+  }
 }
 
 @media(min-width: 900px) {
