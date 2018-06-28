@@ -1,44 +1,25 @@
 nav {
-  padding: 1rem;
-  text-align: center;
-  border-bottom: solid black 1px;
+  display: flex;
   font-family: 'Raleway', sans-serif;
 }
-
-#textInputField {
-  border-radius: 5px;
-  margin: 1rem auto;
-  max-width: 700px;
-  padding: 1rem;
-  width: 60%;
-}
-#submitButton{
-  border-radius: 5px;
-  margin: 1rem auto;
-  max-width: 700px;
-  padding: 1rem;
-  width: 60%;
-}
-
-#selectLan {
-  border-radius: 5px;
-  margin: 1rem auto;
-  max-width: 700px;
-  padding: 1rem;
-  width: 60%;
-}
-
-
-.labelNumberOfDisplay {
-  width: 90%;
+#filteringForm{
   margin: 0 auto;
-  display: block;
-  font-size: 2em;
-  font-weight: bold;
+  text-align: center;
+}
+.nav-box{
+  display: inline-block;
+  margin: 1rem;
+  min-width: 300px;
 }
 
-.numberOfDisplay {
-  width: 90%;
-  font-size: 1.5em;
+.labelNumberOfDisplay, #numberOfDisplay, .labelSelectLan, #selectLan, .searchButton, #keyword{
+  border-radius: 5px;
   padding: 1rem;
+}
+.labelNumberOfDisplay, .labelSelectLan, #keyword{
+  text-align: right;
+}
+.searchButton{
+  background-color: #00aa3c;
+  color: white;
 }

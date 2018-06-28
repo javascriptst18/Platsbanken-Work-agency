@@ -27,9 +27,7 @@ function createCards(matches) {
 	let html = ""; // Empty string
 	for (let annons of annonsData) {
 
-		if (annons.sista_ansokningsdag) {
-			// Append empty string with HTML elements
-			html += `
+		html += `
 				
 				<div id="${annons.annonsid}" class="annons">
 					<a href="${annons.annonsurl}" target="_blank">	
@@ -37,32 +35,20 @@ function createCards(matches) {
 						<p>${annons.yrkesbenamning}</p>
 						<p>${annons.arbetsplatsnamn}</p>
 						<p>${annons.kommunnamn}</p>
-						<p>${annons.sista_ansokningsdag.substring(0, 10)}</p>
+						<p id="sista_ansokningsdag"></p>
 						<p>${annons.anstallningstyp}</p>
 					</a>
 				</div>
 			`;
-		}
-		else {
-			html += `
-				
-				<div id="${annons.annonsid}" class="annons">
-					<a href="${annons.annonsurl}" target="_blank">	
-						<p>${annons.annonsrubrik}</p>
-						<p>${annons.yrkesbenamning}</p>
-						<p>${annons.arbetsplatsnamn}</p>
-						<p>${annons.kommunnamn}</p>
-						<p>No last sign up day announced</p>
-						<p>${annons.anstallningstyp}</p>
-					</a>
-				</div>
-			`;
-		}
 
 		// Printout HTML string with HTML elements
 		annonsContainer.innerHTML = html;
+		// If last date exist insert the HTML at the paragraph "sista_ansokningsdag" 
+		if (annons.sista_ansokningsdag) {
+			let sistaAnsokan = document.querySelector("#sista_ansokningsdag");
+			sistaAnsokan.insertAdjacentHTML("beforeend", `${annons.sista_ansokningsdag.substring(0, 10)}`)
+		}
 	}
-
 }
 
 // Static function that takes object gained from searchByCriteria as input
@@ -76,7 +62,9 @@ function totannonser(matches) {
 	antal_platsannonser.innerHTML = html;
 }
 
+// Select form in nav
 const formSubmit = document.querySelector("#filteringForm");
+// When the event submit occur store the values and us them to filter the URL
 formSubmit.addEventListener("submit", function (event) {
 	event.preventDefault();
 	let numberOfDisplaysSelect = document.querySelector("#numberOfDisplay").value;
@@ -85,9 +73,3 @@ formSubmit.addEventListener("submit", function (event) {
 	let url = `platsannonser/matchning?nyckelord=${searchWord}&lanid=${lan}&antalrader=${numberOfDisplaysSelect}`;
 	searchByCriteria(url);
 })
-
-
-function numberOfDisplays() {
-
-}
-
