@@ -39,6 +39,7 @@
         <div class="nav-box">
             <label for="selectKategori" class="labelSelectKategori">Select kategori</label>
             <select id="selectKategori">
+                <option value="99">Välj kategori</option>
                 <option value="0">Administration, ekonomi, juridik</option>
                 <option value="1">Bygg och anläggning</option>
                 <option value="20">Chefer och verksamhetsledare</option>
@@ -118,21 +119,23 @@
 <main id="annons">
 </main>
 <aside>
-                        <div id="myModal" class="modal">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                  <span class="close">&times;</span>
-                                  <h2>Modal Header</h2>
-                                </div>
-                            <div class="modal-body">
-                              <p>Some text in the Modal Body</p>
-                              <p>Some other text...</p>
-                            </div>
-                                <div class="modal-footer">
-                                  <h3>Modal Footer</h3>
-                                </div>
-                            </div>
-                        </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 id="infoHeader"></h2>
+            </div>
+            <div id="modalContent" class="modal-body">
+                <h2 id="infoTitle"></h2>
+                <p id="jobDescription"></p>
+                <p id="workTime"></p>
+                <p id="workType"></p>
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                         </div>
+        </div>
+    </div>
 </aside>
 </div>
 <footer>
