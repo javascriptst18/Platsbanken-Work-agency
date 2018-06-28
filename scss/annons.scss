@@ -8,9 +8,8 @@
 .annons {
   font-family: 'Raleway', sans-serif;
   background-color: white;
-  border: solid black 1px;
   border-radius: 4px;
-  // box-shadow: 4px 4px 4px black;
+  box-shadow: 0 0 2px black;
   margin-bottom: 1rem;
   adding: 1rem;
   width: 100%;
@@ -18,6 +17,10 @@
   a {
     text-decoration: none;
     color: black;
+  }
+
+  h2 {
+    color: #00aa3c;
   }
  /*  &:hover {
     transform: scale(1.1);
