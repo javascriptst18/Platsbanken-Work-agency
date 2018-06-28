@@ -8,17 +8,18 @@ nav {
 }
 .nav-box{
   display: inline-block;
-  margin: 1rem;
-  min-width: 300px;
+  margin: 0.5rem;
+  min-width: 150px;
 }
 
-.labelNumberOfDisplay, #numberOfDisplay, .labelSelectLan, #selectLan, .searchButton, #keyword{
+.labelNumberOfDisplay, #numberOfDisplay, .labelSelectLan, #selectLan, .searchButton, #keyword, .labelSelectKategori, #selectKategori {
   border-radius: 5px;
   padding: 1rem;
 }
-.labelNumberOfDisplay, .labelSelectLan, #keyword{
+.labelNumberOfDisplay, .labelSelectLan, #keyword, .labelSelectKategori{
   text-align: right;
 }
+
 .searchButton{
   background-color: #00aa3c;
   color: white;
